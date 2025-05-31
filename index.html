@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dark Mode UI - SkillCraft</title>
+<style>
+  body { font-family: Arial, sans-serif; transition: background-color 0.3s, color 0.3s; }
+  .light-mode { background-color: white; color: black; }
+  .dark-mode { background-color: #121212; color: white; }
+  .container { max-width: 600px; margin: 50px auto; text-align: center; }
+  button { padding: 10px 20px; cursor: pointer; }
+</style>
+</head>
+<body class="light-mode">
+<div class="container">
+  <h1>SkillCraft Dark Mode UI</h1>
+  <p>Toggle between light and dark mode to see the effect.</p>
+  <button id="toggleBtn">Switch to Dark Mode</button>
+</div>
+<script>
+  const btn = document.getElementById('toggleBtn');
+  const body = document.body;
+  btn.addEventListener('click', () => {
+    if(body.classList.contains('light-mode')) {
+      body.classList.replace('light-mode', 'dark-mode');
+      btn.textContent = 'Switch to Light Mode';
+    } else {
+      body.classList.replace('dark-mode', 'light-mode');
+      btn.textContent = 'Switch to Dark Mode';
+    }
+  });
+</script>
+</body>
+</html>
